@@ -461,7 +461,7 @@ footer:hover {
     #zen-supporting div:hover,
     #zen-supporting footer:hover {
         box-shadow: none;
-        width: auto;
+        width: inherit;
         height: auto;
         padding: 15px;
         text-align: left;
