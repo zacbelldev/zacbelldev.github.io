@@ -1,5 +1,4 @@
 // -------------------------------CSS ZEN GARDEN BY THE LEGENDARY CSS SQUAD---------------------------------------------------------------
-
 // -------------------------------FONTS / COLORS
 @import url('https://fonts.googleapis.com/css?family=Electrolize');
 
@@ -8,8 +7,10 @@
     src: url('tron.ttf');
 }
 
-$tronFont: 'Tron', sans-serif;
-$electroFont: 'Electrolize', sans-serif;
+$tronFont: 'Tron',
+sans-serif;
+$electroFont: 'Electrolize',
+sans-serif;
 $tronBlue: #53fdff;
 $black: #000000;
 $tronOrange: #fd5f00;
@@ -19,61 +20,243 @@ $white: #ffffff;
 
 // -------------------------------FONTS / COLORS ASSIGNED
 $defaultTextColor: $white;
-$htmlBodyBackgroundColor: $black;
-
+//$htmlBodyBackgroundColor: $black;
 $headingColor: $tronBlue;
 $headingFont: $tronFont;
- 
+
 $paragraphColor: $white;
 $paragraphFont: $electroFont;
 
 $linkColor: $white;
 $linkFont: $electroFont;
-   
+
 @import 'partials/generalStyles';
 
-
-
-// -------------------------------SECTIONS
-//TOP SECTION
-.intro{
-//    display: none;
+.intro {
     margin: 20px;
-    font-size:10px;
+    font-size: 15px;
+    width: 26vw;
+    position: absolute;
+    top: 10vh;
+    z-index: 11;
+}
+
+.extra1 {
+    background-image: url(/assets/tron-01.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    width: 290px;
+    height: 50px;
+    animation: slideFromLeftFlash 10s infinite;
+}
+
+.extra2 {
+    background-image: url(/assets/tron-02.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 270px;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    animation: slideFromLeftBiker 10s infinite;
+}
+
+@keyframes slideFromLeftFlash {
+    0% {
+        left: -390px;
+        opacity: 1;
+    }
+
+    40% {
+        left: 0px;
+        opacity: 0;
+    }
+
+    60% {
+        left: 125%;
+        opacity: 1;
+    }
+
+    61% {
+        opacity: 0;
+    }
+
+    80% {
+        left: -390px;
+        opacity: 0;
+    }
+
+    81% {
+        opacity: 1;
+    }
+
+    100% {
+        left: -250px;
+        opacity: 0;
+    }
+}
+
+@keyframes slideFromLeftBiker {
+    0% {
+        left: -120px;
+    }
+
+    40% {
+        left: 270px;
+    }
+
+    60% {
+        left: 150%;
+        opacity: 1;
+    }
+
+    61% {
+        opacity: 0;
+    }
+
+    80% {
+        left: -120px;
+        opacity: 0;
+    }
+
+    81% {
+        opacity: 1;
+    }
+
+    100% {
+        left: -150px;
+    }
+}
+
+.extra3 {
+    height: 2px;
+    width: 50px;
+    background: $tronBlue;
+    margin-top: 25em;
+    position: absolute;
+    z-index: -10;
+    animation: pulseLeft .95s infinite;
+}
+
+@keyframes pulseLeft {
+
+    55% {
+        margin-left: 10em;
+        width: 60px;
+    }
+
+    85% {
+        margin-left: 30em;
+        width: 80px;
+    }
+
+    100% {
+        margin-left: 50em;
+        width: 100px
+    }
+}
+
+.extra4 {
+    height: 2px;
+    width: 50px;
+    background: $tronBlue;
+    margin-top: 14.5em;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    animation: pulseRight 7s infinite;
+}
+
+@keyframes pulseRight {
+
+    55% {
+        margin-right: 10em;
+        width: 60px;
+    }
+
+    85% {
+        margin-right: 30em;
+        width: 80px;
+    }
+
+    90% {
+        margin-right: 32em;
+        width: 80px;
+    }
+
+    95% {
+        margin-right: 40em;
+        width: 80px;
+    }
+
+    100% {
+        margin-right: 80em;
+        width: 100px
+    }
+}
+
+.extra5 {
+    height: 2px;
+    width: 50px;
+    background: $tronBlue;
+    margin-top: 17.5em;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    animation: pulseRight 2s infinite;
+}
+
+.extra6 {
+    background: url(/assets/official_tron_logo.svg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    border-radius: 0px 0px 0px 5px;
+
 }
 
 //LEFT SECTION
 #zen-supporting {
     position: absolute;
-    top: 30vh;
-    left: 25vw;
-    height: 100%;
-    width: 80%;
+    top: 135px;
+    left: 38vw;
+    height: 560px;
+    z-index: 25;
+    animation: float 5s infinite;
 }
 
 //RIGHT SECTION
 .sidebar {
     position: absolute;
-    top: 30vh;
-    left: 55vw;
-    height: 100%;
-    width: 80%;
+    top: 10vh;
+    left: 70vw;
+    margin: 20px;
 }
- 
 
+//List Items
+.wrapper div ul li {
+    list-style: none;
+    list-style-image: url(/assets/trondisk_15px.png);
+}
 
 // -------------------------------LEFT SECTION 3D LAYER EFFECTS
-#zen-supporting {
-    animation: float 5s infinite;
-}
 
 @keyframes float {
-    60% {        
+    60% {
         transform: translateY(-30px);
-    }    
+    }
 }
 
-#zen-supporting div, 
+#zen-supporting div,
 #zen-supporting footer {
     background: black;
     height: 250px;
@@ -105,7 +288,7 @@ $linkFont: $electroFont;
 // ---- ZEN EXPLANATION
 #zen-explanation {
     transform: rotateX(45deg) rotateZ(45deg) translateZ(0);
-    z-index:10;
+    z-index: 10;
 }
 
 #zen-explanation:hover {
@@ -116,7 +299,7 @@ $linkFont: $electroFont;
 // ---- ZEN PARTICIPATION
 #zen-participation {
     transform: rotateX(45deg) rotateZ(45deg) translateZ(250px);
-    z-index:9;
+    z-index: 9;
 }
 
 #zen-participation:hover {
@@ -127,7 +310,7 @@ $linkFont: $electroFont;
 // ---- ZEN BENEFITS
 #zen-benefits {
     transform: rotateX(45deg) rotateZ(45deg) translateZ(500px);
-    z-index:8;
+    z-index: 8;
 }
 
 #zen-benefits:hover {
@@ -138,7 +321,7 @@ $linkFont: $electroFont;
 // ---- ZEN REQUIREMENTS
 #zen-requirements {
     transform: rotateX(45deg) rotateZ(45deg) translateZ(750px);
-    z-index:7;
+    z-index: 7;
 }
 
 #zen-requirements:hover {
@@ -149,7 +332,7 @@ $linkFont: $electroFont;
 // ---- FOOTER
 footer {
     transform: rotateX(45deg) rotateZ(45deg) translateZ(1000px);
-    z-index:6;
+    z-index: 6;
 }
 
 footer:hover {
@@ -159,20 +342,54 @@ footer:hover {
 
 
 // -------------------------------RIGHT SECTION STYLES
+//.sidebar {
+//    overflow: hidden;
+//    animation: scroll 5s infinite alternate;
+//}
+//
+//@keyframes scroll {
+//    10% {
+//        margin-top: -1em;
+//    }
+//    20% {
+//        margin-top: -2em;
+//    }
+//    30% {
+//        margin-top: -3em;
+//    }
+//    40% {
+//        margin-top: -4em;
+//    }
+//    50% {
+//        margin-top: -5em;
+//    }
+//    60% {
+//        margin-top: -6em;
+//    }
+//    70% {
+//        margin-top: -7em;
+//    }
+//    80% {
+//        margin-top: -8em;
+//    }
+//}
 .sidebar div div h3 {
-    text-shadow: 0 0 5px $white;
+    text-shadow: 0 0 10px $white;
     animation: flicker 2s infinite alternate;
 }
 
 @keyframes flicker {
-    20%, 24%, 75% {        
+    20%,
+    24%,
+    75% {
         text-shadow: none;
-    }    
+    }
 }
 
 .sidebar div div {
     margin-bottom: 20px;
 }
+
 .design-name {
     font-weight: bolder;
     text-decoration: none;
@@ -185,11 +402,84 @@ footer:hover {
 
 
 // -------------------------------MEDIA QUERIES
-// DESKTOP
-@media screen and (min-width: 500px){
-
+@media screen and (min-width: 1400px) {
+    #zen-supporting {
+        left: 40vw;
+    }
 }
 
+// MOBILE
+@media screen and (max-width: 900px) {
 
+    .intro {
+        height: 225px;
+        overflow: scroll;
+        width: 100%;
+        top: 5%;
+        margin: 0;
+        padding: 20px;
+        border: 1px solid $tronBlue;
+        z-index: 0;
+        box-shadow: 0px -10px 74px 31px rgba(83, 253, 255, 0.35);
+    }
 
+    .sidebar {
+        height: 280px;
+        overflow: scroll;
+        left: 0;
+        top: 530px;
+        width: 100%;
+        margin: 0;
+        padding: 20px 20px 20px 40px;
+        border: 1px solid $tronBlue;
+        box-shadow: 0px -10px 50px 15px rgba(83, 253, 255, 0.35);
+    }
 
+    #zen-supporting {
+        position: absolute;
+        top: 265px;
+        left: 5px;
+        height: 225px;
+        overflow: hidden;
+        overflow-y: scroll;
+        animation: none;
+    }
+
+    #zen-supporting div,
+    #zen-supporting footer {
+        background: none;
+        height: auto;
+        width: auto;
+        overflow: visible;
+        overflow-y: visible;
+        position: relative;
+        box-shadow: none;
+        transition: all 0.3s ease-out;
+        padding: 15px;
+        text-align: center;
+    }
+
+    #zen-participation,
+    #zen-explanation,
+    #zen-benefits,
+    #zen-requirements,
+    footer {
+        transform: none;
+        &:hover {
+            transform: none;
+        }
+    }
+
+    .extra6 {
+        background: url(/assets/official_tron_logo.svg);
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 70px;
+        height: 35px;
+        position: absolute;
+        right: 0;
+        border-radius: 0px 0px 0px 5px;
+
+    }
+}
